@@ -12,7 +12,7 @@ include percona::cluster::client
 
 Class['percona::repository'] -> Class['percona::cluster::client']
 
-Class['percona::cluster::client'] -> Class['test::sysbench_pkg'] -> Class['test::sysbench_test_script']
+Class['percona::cluster::service'] -> Class['test::sysbench_pkg'] -> Class['test::sysbench_test_script']
 include test::sysbench_pkg
 include test::sysbench_test_script
 
@@ -27,14 +27,11 @@ include base::motd
 
 include misc::speedometer
 include misc::myq_gadgets
-include misc::dbsake
 
 Class['base::packages'] -> Class['misc::myq_gadgets']
 
-notice ("haproxy disabled is $haproxy_disabled")
-if ( $haproxy_disabled == 'false' )  {
-	include haproxy::server-pxc
-}
+include haproxy::server-pxc
+
 
 include percona::cluster::server
 include percona::cluster::config
@@ -67,3 +64,5 @@ if ( $percona_agent_enabled == true or $percona_agent_enabled == 'true' ) {
 
 include training::helper_scripts
 include training::pxc_exercises
+
+Class['training::helper_scripts'] -> Class['misc::speedometer']

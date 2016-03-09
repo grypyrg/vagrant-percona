@@ -41,14 +41,11 @@ deb-src http://repo.percona.com/apt precise experimental
 
 				yumrepo {
 					"percona-testing-source":
-						enabled => 1,
-						require	=> Package["percona-release"];
+						enabled => 1;
 					"percona-testing-noarch":
-						enabled => 1,
-						require	=> Package["percona-release"];
+						enabled => 1;
 					"percona-testing-\$basearch":
-						enabled => 1,
-						require	=> Package["percona-release"];
+						enabled => 1;
 				}
 			}
 
