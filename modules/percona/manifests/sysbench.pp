@@ -2,7 +2,7 @@ class percona::sysbench {
 	package {
 		"sysbench":
 			# Should be in percona yum repo now
-			ensure => 'installed';
+			ensure => '0.5-6.el7';
 	}
 	file {
 		"/root/sysbench_tests":
