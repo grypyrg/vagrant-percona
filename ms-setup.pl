@@ -83,5 +83,5 @@ END
 foreach my $slave( @running_nodes ) {
 	print "Executing CHANGE MASTER and START SLAVE on '$slave->{name}':\n";
 	print "- $change_master\n";
-	#system( "vagrant ssh $slave->{name} -c \"$change_master\" 2>/dev/null");
+	system( "vagrant ssh $slave->{name} -c \"$change_master\" 2>/dev/null");
 }

@@ -1,11 +1,9 @@
 class training::ssh_key {
-
-	ssh_authorized_key {$title:
+	ssh_authorized_key { $title:
 		ensure          => present,
-		name            => 'percona-training',
-		user            => 'root',
+		name            => 'xtradb-tutorial',
+		user            => 'vagrant',
 		type            => ssh-rsa,
-		key             => "AAAAB3NzaC1yc2EAAAADAQABAAABAQCPPDcD4/1gZY8EZaCuYZq7l4KdnPzkr2LIi94pa7GQ6vAg9l/o2MDXNrBT+P7sjfbzRurR633wD5NkERWx8TdRPIZRaZKYp6F4CbOf+LtEYw9dF3CwZVjFHKLqEsKEDMnbpwbaL33RycbjDh3cTHHN65WxiWKhX2yMIwxj3q+rGbx2CP+IUtP59hxc3iz/Fddm3JziB0N4bd0kPL3f8CtdXpmgz+rScL73+L7L0gmF453qXdCYc8wWRdNLhDyxC9nTBDheKEDasyYiprdeuT1D/Nj0eeN/jppU1GJfZ81rryfBRoXShu4yPc0TwDUgF9L9wQiY0lYdVSIh0wbano+B"
-    }
-
+		key             => "AAAAB3NzaC1yc2EAAAADAQABAAABAQDXFysRRj+M3aOBIqw8dwtkdBHjyUwwGpGeIyB34VI02TENG85DwyGSmbDyuSWt30DRiRIh9h6h0Tv+yWAOJxGIqOAzxQN3Hn0HTdc3xZxNf+XbQztA8drAftHTshtr6A1/OWRdoVQ7++bAhuD5uXrtpiAW1VVst8jBoiyE7KT7MwVv/UXLVA+BFXo9bN9UGQ4SSryyZHGpMLnmPrlDzWkmsijXDjzkXZvJkB28wsEJGzem8a740z99gWYCHdPwx/tjLoCe4AvyaiaCQe3PtRYN/BZdw/i4d8aPATzbzE1VrLdK84zU9haTBP8rguWQS3hEGG3xGgso/W73nDPWJNlL"
+	}
 }

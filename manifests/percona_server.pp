@@ -21,6 +21,7 @@ include misc::myq_gadgets
 include misc::myq_tools
 
 include test::user
+include training::ssh_key
 
 if $datadir_dev {
 	class { 'mysql::datadir':
