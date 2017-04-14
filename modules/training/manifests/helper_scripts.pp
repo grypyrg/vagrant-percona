@@ -17,6 +17,14 @@ class training::helper_scripts {
 			ensure	=> present,
 			mode	=> 755,
 			source	=> "puppet:///modules/training/galeraWaitUntilEmptyRecvQueue.func.sql";
+		"/root/haproxy.cfg":
+			ensure  => present,
+			mode    => 644,
+			source  => "puppet:///modules/training/haproxy.cfg";
+		"/root/keepalived.conf":
+			ensure  => present,
+			mode    => 644,
+			source  => "puppet:///modules/training/keepalived.cfg";
 		"/var/lib/mysql/test":
 			ensure	=> directory,
 			mode 	=> 755,
